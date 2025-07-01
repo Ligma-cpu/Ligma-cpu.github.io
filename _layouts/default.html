@@ -193,6 +193,7 @@
           <div class="cheats-subtabs">
             <button id="csgoBtn" class="active" onclick="openCheatsSubTab('csgo')">CSGO Cheats</button>
             <button id="minecraftBtn" onclick="openCheatsSubTab('minecraft')">Minecraft Cheats</button>
+            <button id="loadersBtn" onclick="openCheatsSubTab('loaders')">Loaders & Injectors</button>
           </div>
 
           <div id="csgo" class="cheats-subtab-content" style="display: block;">
@@ -220,6 +221,20 @@
               <h3>Speedhack for Minecraft</h3>
               <p>Increase your walking and flying speed seamlessly.</p>
               <a href="https://example.com/minecraft-speedhack.exe" class="download-btn">Download Minecraft Speedhack</a>
+            </div>
+          </div>
+
+          <div id="loaders" class="cheats-subtab-content" style="display: none;">
+            <div class="module">
+              <h3>LoaderX</h3>
+              <p>Fast and stealthy loader for various cheats and hacks.</p>
+              <a href="https://example.com/loaderx.exe" class="download-btn">Download LoaderX</a>
+            </div>
+
+            <div class="module">
+              <h3>InjectorPro</h3>
+              <p>Reliable DLL injector with multiple bypass techniques.</p>
+              <a href="https://example.com/injectorpro.exe" class="download-btn">Download InjectorPro</a>
             </div>
           </div>
         </div>
@@ -263,10 +278,13 @@
         // Toggle active button style
         document.getElementById('csgoBtn').classList.remove('active');
         document.getElementById('minecraftBtn').classList.remove('active');
+        document.getElementById('loadersBtn').classList.remove('active');
         if(tabName === 'csgo') {
           document.getElementById('csgoBtn').classList.add('active');
         } else if(tabName === 'minecraft') {
           document.getElementById('minecraftBtn').classList.add('active');
+        } else if(tabName === 'loaders') {
+          document.getElementById('loadersBtn').classList.add('active');
         }
       }
 
