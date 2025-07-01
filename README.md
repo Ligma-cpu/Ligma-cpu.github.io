@@ -5,13 +5,14 @@
 
 # 1.8.9 OTHER CLIENTS
 =====================
-<a href="https://hackvshack.net/attachments/vape-zip.8474" class="fancy button">VapeV4.17</a>
-<a href="" class="fancy button">Exhibition</a>
-[Raven B++"Essential"](https://cdn.essential.gg/mods/60ecf53d6b26c76a26d49e5b/62c746c961a27f691be98531/Essential-forge_1-8-9.jar)
-[Raven B++"Sigmas"](https://github.com/sigmaclientwastaken/Raven-bPLUS/raw/stable/build/libs/%5B1.8.9%5D%20BetterKeystrokes%20V-1.2.jar)
-[Raven XD](https://github.com/Project-XD/Raven-XD/releases/download/v3.1/raven-XD.jar)
-[Raven B+++](https://mimhax.netlify.app/Files/Raven%20B+++.jar)
-[Rise v6 new](https://store5.gofile.io/download/web/c6304268-f897-45a4-8102-b85474df782e/Rise%20v6%20New.zip)
+
+<a href="https://hackvshack.net/attachments/vape-zip.8474" class="fancy button">Vape v4.17</a>
+<a href="https://cold-eu-agl-1.gofile.io/download/web/de466ee0-7eff-4a69-8bbb-73f7c5dce312/%5B1.8.9%5D%20BetterKeystrokes%20V-1.2.jar" class="fancy button">Raven B++"Stable"</a>
+<a href="https://cold2.gofile.io/download/web/9606e579-e4cb-49f4-956c-77dcce56c1ea/Essential-forge_1-8-9.jar" class="fancy button">Raven B++"Essential"</a>
+<a href="https://cold1.gofile.io/download/web/d48458a6-9eb8-455d-889a-44ca395205af/%5B1.8.9%5D%20BetterKeystrokes%20V-1.2.jar" class="fancy button">Raven B++"Sigmas"</a>
+<a href="https://cold5.gofile.io/download/web/eefd6ad3-dd71-47a0-a0c7-32d4485b356a/raven-XD.jar" class="fancy button">Raven XD</a>
+<a href="https://cold-eu-agl-1.gofile.io/download/web/f47a1c14-1519-400f-a750-90cbe9344464/Raven%20B%2B%2B%2B.jar" class="fancy button">Raven B+++</a>
+<a href="store5.gofile.io/download/web/c6304268-f897-45a4-8102-b85474df782e/Rise v6 New.zip" class="fancy button">Rise v6 new</a>
 
 # 1.8.9-1.21.4 RESOURCE PACKS
 =============================
