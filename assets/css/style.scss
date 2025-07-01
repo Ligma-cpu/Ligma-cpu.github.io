@@ -63,3 +63,34 @@
     }
   }
 }
+
+.thread {
+  background-color: #333;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  color: white;
+
+  .thread-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #00cc88;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .thread-meta {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+
+  .thread-preview {
+    font-size: 1em;
+    color: #ddd;
+  }
+}
+
