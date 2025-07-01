@@ -58,3 +58,28 @@
 # =====================
 
 [Exloader.net](https://data.exloader.net/ExLoader_Installer.exe)
+
+<a href="https://data.exloader.net/ExLoader_Installer.exe" target="_blank" style="text-decoration: none;">
+  <button style="
+    width: 300px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #aae04c;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  " onmouseover="
+    this.style.backgroundColor='#98cb3f';
+    this.style.boxShadow='0 0 0 3px #555';
+  " onmouseout="
+    this.style.backgroundColor='#aae04c';
+    this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)';
+  ">
+    ExLoader
+  </button>
+</a>
+
