@@ -1,10 +1,10 @@
 # DOWNLOAD LIGMA HERE
-# ===================
+# =================
 
 <a href="https://minesense.pub/download/Exhibition-Fixed.zip" class="fancy button">Exhibition</a>
 
 # 1.8.9 OTHER CLIENTS
-# ===================
+# ==============
 
 <a href="https://hackvshack.net/attachments/vape-zip.8474" class="fancy button">Vape v4.17</a>
 
