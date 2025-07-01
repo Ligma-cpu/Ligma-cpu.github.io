@@ -72,10 +72,6 @@
         color: #00cc88;
         text-decoration: none;
         cursor: pointer;
-        user-select: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
       }
 
       .thread-title:hover {
@@ -88,11 +84,17 @@
         margin-bottom: 8px;
       }
 
-      .thread-details {
+      .thread-preview {
         font-size: 1em;
-        color: #ccc;
+        color: #ddd;
+      }
+
+      /* Replies styling */
+      .thread-replies {
         margin-top: 10px;
-        line-height: 1.4em;
+        padding-left: 15px;
+        border-left: 2px solid #00cc88;
+        color: #ccc;
       }
 
       /* Subtab button styles - minimal, no background or color overrides */
@@ -149,35 +151,32 @@
           <h2>Community Forum</h2>
 
           <div class="thread">
-            <a href="javascript:void(0)" class="thread-title" onclick="toggleThread(this)">
-              <span class="arrow">▶</span> How to install the aimbot?
-            </a>
+            <a href="javascript:void(0)" class="thread-title" onclick="toggleReplies(this)">How to install the aimbot?</a>
             <div class="thread-meta">Started by <strong>User123</strong> — July 1, 2025</div>
-            <div class="thread-details" style="display:none;">
-              <p><strong>Question:</strong> I’m having trouble installing the aimbot on Warzone. Any help?</p>
-              <p><strong>Reply:</strong> Try running the installer as administrator and make sure your antivirus is disabled during installation.</p>
+            <p class="thread-preview">I’m having trouble installing the aimbot on Warzone. Any help?</p>
+            <div class="thread-replies" style="display:none;">
+              <p><strong>Reply from Helper1:</strong> Make sure to run the installer as admin.</p>
+              <p><strong>Reply from User123:</strong> Tried that, still no luck.</p>
             </div>
           </div>
 
           <div class="thread">
-            <a href="javascript:void(0)" class="thread-title" onclick="toggleThread(this)">
-              <span class="arrow">▶</span> Best settings for wallhack
-            </a>
+            <a href="javascript:void(0)" class="thread-title" onclick="toggleReplies(this)">Best settings for wallhack</a>
             <div class="thread-meta">Started by <strong>ProGamer</strong> — June 30, 2025</div>
-            <div class="thread-details" style="display:none;">
-              <p><strong>Question:</strong> Which settings give the best visibility without detection?</p>
-              <p><strong>Reply:</strong> Use low opacity for walls and avoid high contrast colors to reduce suspicion.</p>
+            <p class="thread-preview">Which settings give the best visibility without detection?</p>
+            <div class="thread-replies" style="display:none;">
+              <p><strong>Reply from ExpertGamer:</strong> Use the low contrast filter and enable edge highlight.</p>
+              <p><strong>Reply from ProGamer:</strong> Thanks! That helped a lot.</p>
             </div>
           </div>
 
           <div class="thread">
-            <a href="javascript:void(0)" class="thread-title" onclick="toggleThread(this)">
-              <span class="arrow">▶</span> New cheats for upcoming update?
-            </a>
+            <a href="javascript:void(0)" class="thread-title" onclick="toggleReplies(this)">New cheats for upcoming update?</a>
             <div class="thread-meta">Started by <strong>Admin</strong> — June 28, 2025</div>
-            <div class="thread-details" style="display:none;">
-              <p><strong>Question:</strong> Will there be new cheats compatible with the next Warzone patch?</p>
-              <p><strong>Reply:</strong> Yes, the team is currently working on updates to stay ahead of patches.</p>
+            <p class="thread-preview">Will there be new cheats compatible with the next Warzone patch?</p>
+            <div class="thread-replies" style="display:none;">
+              <p><strong>Reply from DevTeam:</strong> Yes, we are working on updates for the new patch.</p>
+              <p><strong>Reply from Admin:</strong> Looking forward to it!</p>
             </div>
           </div>
         </div>
@@ -220,93 +219,100 @@
             <div class="module">
               <h3>Skeet.cc</h3>
               <p>The 2nd best cheat after Neverlose.cc</p>
-              <a href="https://cold5.gofile.io/download/web/da29d8b6-2e0d-4dc8-9242-7468f65c8c4b/skeet.rar" class="download-btn">Download Skeet.cc</a>
+              <a href="https://cold1.gofile.io/download/web/e229efce-cd63-41f5-a815-d01a6a5f4e04/skeet.zip" class="download-btn">Download Skeet</a>
+            </div>
+
+            <div class="module">
+              <h3>Neverlose.cc</h3>
+              <p>The best csgo cheat 2022.</p>
+              <a href="https://cold1.gofile.io/download/web/66c9d5f2-6e2f-4d3e-9199-8f3bb548771b/Neverlose 2.0.rar" class="download-btn">Download Neverlose.cc</a>
             </div>
           </div>
 
           <div id="minecraft" class="subtab-content" style="display:none;">
             <div class="module">
-              <h3>Wurst</h3>
-              <p>The oldest and best hacked client for minecraft.</p>
-              <a href="https://cold2.gofile.io/download/web/e0d6c8a1-c5ac-4ef2-b424-315d6d610bbd/Wurst-6.16.zip" class="download-btn">Download Wurst</a>
+              <h3>Huzuni</h3>
+              <p>Minecrafthack client.</p>
+              <a href="https://cold4.gofile.io/download/web/7e27b66c-52e0-4367-b8f3-5b503eb276dd/Huzuni.zip" class="download-btn">Download Huzuni</a>
             </div>
 
             <div class="module">
               <h3>Aristois</h3>
-              <p>Premium and best client for 1.19.</p>
-              <a href="https://cold2.gofile.io/download/web/02082304-02f7-4da6-a2d6-8e31a3f81927/Aristois%201.19.2.zip" class="download-btn">Download Aristois</a>
+              <p>Advanced hacked client for Minecraft 1.8-1.12</p>
+              <a href="https://cold1.gofile.io/download/web/8c38c5ea-6ac4-48db-9cd2-03cf097317c2/Aristois.rar" class="download-btn">Download Aristois</a>
             </div>
           </div>
 
           <div id="injectors" class="subtab-content" style="display:none;">
             <div class="module">
-              <h3>Extreme Injector 3</h3>
-              <p>Inject your dll files with ease</p>
-              <a href="https://cold1.gofile.io/download/web/11708d99-fcd5-43df-8d29-2e88370138c6/extreme_injector_3.rar" class="download-btn">Download Injector</a>
+              <h3>Memery Injector</h3>
+              <p>Fast injector that supports x64 and x86.</p>
+              <a href="https://cold4.gofile.io/download/web/849d4f3e-e6ee-4c54-a45e-9db3d9675a46/memery_injector.zip" class="download-btn">Download Memery Injector</a>
+            </div>
+
+            <div class="module">
+              <h3>Extreme Injector</h3>
+              <p>Advanced injector for various cheats.</p>
+              <a href="https://cold1.gofile.io/download/web/ea0a836a-51a1-4f92-95a3-16fa8a3f7c44/extreme_injector.zip" class="download-btn">Download Extreme Injector</a>
             </div>
           </div>
 
           <div id="txtpacks" class="subtab-content" style="display:none;">
             <div class="module">
-              <h3>Rust no recoil</h3>
-              <p>txt pack for recoil control.</p>
-              <a href="https://cold4.gofile.io/download/web/1e6f4611-f30b-4f8c-8663-d56662102839/Rust_NoRecoil.zip" class="download-btn">Download txt</a>
+              <h3>Modern Warfare Textures</h3>
+              <p>Custom texture pack for MW.</p>
+              <a href="https://cold1.gofile.io/download/web/c9caa1f3-7975-4d45-a7b5-55a1a27c79ed/mw_texturepack.zip" class="download-btn">Download Texture Pack</a>
             </div>
           </div>
         </div>
 
         <div id="tab3" class="tab-content" style="display:none;">
           <h2>Contact Us</h2>
-          <p>Have questions or want to contribute? Email us at <a href="mailto:support@cheatsite.com">support@cheatsite.com</a></p>
+          <p>For support, please email support@example.com or join our Discord.</p>
         </div>
       </div>
     </div>
 
     <footer>
-      <p>Copyright &copy; 2025 Your Cheat Site</p>
+      <p>© 2025 Your Website Name</p>
     </footer>
 
     <script>
+      // Tabs function
       function openTab(tabName) {
-        // Hide all tab contents
-        var tabs = document.querySelectorAll(".tab-content");
-        tabs.forEach(function(tab) {
-          tab.style.display = "none";
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+          tab.style.display = 'none';
         });
-
-        // Show the selected tab
-        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).style.display = 'block';
       }
 
+      // Subtabs function inside Cheats
       function openSubTab(subTabName) {
-        // Hide all subtab contents
-        var subTabs = document.querySelectorAll(".subtab-content");
-        subTabs.forEach(function(subTab) {
-          subTab.style.display = "none";
+        const subTabs = document.querySelectorAll('.subtab-content');
+        subTabs.forEach(st => {
+          st.style.display = 'none';
         });
+        document.getElementById(subTabName).style.display = 'block';
 
-        // Remove active class from all subtab buttons
-        var subTabButtons = document.querySelectorAll(".subtab-buttons button");
-        subTabButtons.forEach(function(btn) {
-          btn.classList.remove("active");
-        });
-
-        // Show the selected subtab content and activate button
-        document.getElementById(subTabName).style.display = "block";
-        document.getElementById("btn-" + subTabName).classList.add("active");
+        // Remove 'active' from all buttons, add to clicked
+        const buttons = document.querySelectorAll('.subtab-buttons button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn-' + subTabName).classList.add('active');
       }
 
-      function toggleThread(element) {
-        const thread = element.parentElement;
-        const details = thread.querySelector('.thread-details');
-        const arrow = element.querySelector('.arrow');
+      // New: Toggle replies under forum threads
+      function toggleReplies(element) {
+        const threadDiv = element.closest('.thread');
+        if (!threadDiv) return;
 
-        if (details.style.display === 'none' || details.style.display === '') {
-          details.style.display = 'block';
-          arrow.textContent = '▼';
+        const replies = threadDiv.querySelector('.thread-replies');
+        if (!replies) return;
+
+        if (replies.style.display === 'none' || replies.style.display === '') {
+          replies.style.display = 'block';
         } else {
-          details.style.display = 'none';
-          arrow.textContent = '▶';
+          replies.style.display = 'none';
         }
       }
     </script>
