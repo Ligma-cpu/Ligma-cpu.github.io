@@ -97,5 +97,12 @@
 .subtab-buttons button.active {
   font-weight: bold;
   text-decoration: underline;
-  color: #00ffcc; // match Cheats section title color
+  background-color: #00ffcc;  // same as section title color
+  color: #222;                // make text readable on bright background
 }
+
+.subtab-buttons button:hover:not(.active) {
+  background-color: #004d40; // a darker teal for hover effect
+  color: white;
+}
+
