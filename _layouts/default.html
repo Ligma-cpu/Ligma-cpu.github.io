@@ -71,6 +71,11 @@
         font-size: 1.2em;
         color: #00cc88;
         text-decoration: none;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
       .thread-title:hover {
@@ -83,9 +88,11 @@
         margin-bottom: 8px;
       }
 
-      .thread-preview {
+      .thread-details {
         font-size: 1em;
-        color: #ddd;
+        color: #ccc;
+        margin-top: 10px;
+        line-height: 1.4em;
       }
 
       /* Subtab button styles - minimal, no background or color overrides */
@@ -142,21 +149,36 @@
           <h2>Community Forum</h2>
 
           <div class="thread">
-            <a href="#" class="thread-title">How to install the aimbot?</a>
+            <a href="javascript:void(0)" class="thread-title" onclick="toggleThread(this)">
+              <span class="arrow">▶</span> How to install the aimbot?
+            </a>
             <div class="thread-meta">Started by <strong>User123</strong> — July 1, 2025</div>
-            <p class="thread-preview">I’m having trouble installing the aimbot on Warzone. Any help?</p>
+            <div class="thread-details" style="display:none;">
+              <p><strong>Question:</strong> I’m having trouble installing the aimbot on Warzone. Any help?</p>
+              <p><strong>Reply:</strong> Try running the installer as administrator and make sure your antivirus is disabled during installation.</p>
+            </div>
           </div>
 
           <div class="thread">
-            <a href="#" class="thread-title">Best settings for wallhack</a>
+            <a href="javascript:void(0)" class="thread-title" onclick="toggleThread(this)">
+              <span class="arrow">▶</span> Best settings for wallhack
+            </a>
             <div class="thread-meta">Started by <strong>ProGamer</strong> — June 30, 2025</div>
-            <p class="thread-preview">Which settings give the best visibility without detection?</p>
+            <div class="thread-details" style="display:none;">
+              <p><strong>Question:</strong> Which settings give the best visibility without detection?</p>
+              <p><strong>Reply:</strong> Use low opacity for walls and avoid high contrast colors to reduce suspicion.</p>
+            </div>
           </div>
 
           <div class="thread">
-            <a href="#" class="thread-title">New cheats for upcoming update?</a>
+            <a href="javascript:void(0)" class="thread-title" onclick="toggleThread(this)">
+              <span class="arrow">▶</span> New cheats for upcoming update?
+            </a>
             <div class="thread-meta">Started by <strong>Admin</strong> — June 28, 2025</div>
-            <p class="thread-preview">Will there be new cheats compatible with the next Warzone patch?</p>
+            <div class="thread-details" style="display:none;">
+              <p><strong>Question:</strong> Will there be new cheats compatible with the next Warzone patch?</p>
+              <p><strong>Reply:</strong> Yes, the team is currently working on updates to stay ahead of patches.</p>
+            </div>
           </div>
         </div>
 
@@ -198,164 +220,95 @@
             <div class="module">
               <h3>Skeet.cc</h3>
               <p>The 2nd best cheat after Neverlose.cc</p>
-              <a href="https://cold5.gofile.io/download/web/a12c28f8-0001-4a67-a60f-c940247709e9/skeet.rar" class="download-btn">Download Skeet.cc</a>
-            </div>
-
-            <div class="module">
-              <h3>Wreakin'Havoc</h3>
-              <p>One of the most legendary cheats for csgo</p>
-              <a href="https://store5.gofile.io/download/web/993bad90-a0f5-46a7-8d8c-1a233c95ce56/wreakhavoc_online.dll" class="download-btn">Download Wreakin'Havoc</a>
+              <a href="https://cold5.gofile.io/download/web/da29d8b6-2e0d-4dc8-9242-7468f65c8c4b/skeet.rar" class="download-btn">Download Skeet.cc</a>
             </div>
           </div>
 
           <div id="minecraft" class="subtab-content" style="display:none;">
             <div class="module">
-              <h3>Minecraft Client 1</h3>
-              <p>The best client for its years(2k20)</p>
-              <a href="https://cold1.gofile.io/download/web/e8132aac-fc7a-4eeb-828e-01d8201cf7a7/Exhibition-Fixed.zip" class="download-btn">Download Minecraft Client 1</a>
+              <h3>Wurst</h3>
+              <p>The oldest and best hacked client for minecraft.</p>
+              <a href="https://cold2.gofile.io/download/web/e0d6c8a1-c5ac-4ef2-b424-315d6d610bbd/Wurst-6.16.zip" class="download-btn">Download Wurst</a>
             </div>
+
             <div class="module">
-              <h3>Raven B++ Essential</h3>
-              <p>Required for running B++ series</p>
-              <a href="https://cold2.gofile.io/download/web/86b2628b-3a79-445a-9213-5bfc1b1f08c2/Essential-forge_1-8-9(required).jar" class="download-btn">Download Raven B++ Essential</a>
-            </div>
-            <div class="module">
-              <h3>Raven B++ Sigmas</h3>
-              <p>Just like dev just more stable made by sigmaclientwastaken.Was supposed to be merged into stable but the client got archived. This bit more bug free than stable and has the old ui</p>
-              <a href="https://cold1.gofile.io/download/web/e50bb90b-7ba4-4f59-98ca-614647a0823a/%5B1.8.9%5D%20BetterKeystrokes%20V-1.2.jar" class="download-btn">Download Raven B++ sigmas</a>
-            </div>
-            <div class="module">
-              <h3>Raven B++ Stable</h3>
-              <p>The most stable branch with most features</p>
-              <a href="https://cold-eu-agl-1.gofile.io/download/web/a640ea9e-de17-485e-a780-8d677a03f0c2/%5B1.8.9%5D%20BetterKeystrokes%20V-1.2(1).jar" class="download-btn">Download Raven Stable</a>
-            </div>
-            <div class="module">
-              <h3>Liquid Bounce</h3>
-              <p>One of the best anarchy cheats.</p>
-              <a href="https://store7.gofile.io/download/web/93fcce47-33cd-42e0-a3ad-9756826e2a6a/LiquidLauncher_0.5.0_x64_en-US.msi" class="download-btn">Download Liquid bounce</a>
-            </div>
-            <div class="module">
-              <h3>Meteor</h3>
-              <p>The best chit for duping on 2p2t.org for rn</p>
-              <a href="https://store5.gofile.io/download/web/aed60e81-29e2-4fe5-989e-ccc1e769d81e/meteor-client-0.5.8(1).jar" class="download-btn">Download Meteor</a>
-            </div>
-            <div class="module">
-              <h3>Trouser Streak Addon for Meteor</h3>
-              <p>The best Griefing addon for meteor</p>
-              <a href="https://store-eu-par-2.gofile.io/download/web/e1cd444b-972f-4582-b97a-9bca9947c054/2trouser-streak-1.3.9-1.21.1.jar" class="download-btn">Download Trouser Streak</a>
-            </div>
-            <div class="module">
-              <h3>Prestige</h3>
-              <p>The best ghost client for Crystal pvp(legit)</p>
-              <a href="https://cold1.gofile.io/download/web/90e7c691-c354-4ada-845d-8b4883e0c185/Prestige%20%2B%20Libs%20hackvshack.net.zip" class="download-btn">Download Prestige</a>
-            </div>
-            <div class="module">
-              <h3>Raven B+++</h3>
-              <p>Basically Raven B++ stable but more safe</p>
-              <a href="https://cold-eu-agl-1.gofile.io/download/web/b95526bd-3c79-472e-9111-2228430dd4f7/Raven%20B%2B%2B%2B.jar" class="download-btn">Download Raven B+++</a>
-            </div>
-            <div class="module">
-              <h3>Raven XD</h3>
-              <p>Basically XD</p>
-              <a href="https://cold5.gofile.io/download/web/dd612847-4ba8-4ab7-a5e1-ac027977c6ee/raven-XD.jar" class="download-btn">Download Raven XD</a>
-            </div>
-            <div class="module">
-              <h3>Rise</h3>
-              <p>Rise client is one of the best clients made for 1.8.9 blatant cheating</p>
-              <a href="https://store5.gofile.io/download/web/b86e5ca6-77e3-46fd-a749-04d23dcdf165/Rise%20v6%20New.zip" class="download-btn">Download Rise</a>
-            </div>
-            <div class="module">
-              <h3>RusherHack 1.21.1</h3>
-              <p>The best anarchy cheat ever made</p>
-              <a href="https://store-eu-par-2.gofile.io/download/web/af2476f3-5d71-4362-98c8-cb07e7f55c1e/rushercrack-2.0.jar" class="download-btn">Download RusherHack</a>
-            </div>
-            <!-- Extra Minecraft Client download button -->
-            <div class="module">
-              <h3>Vape v4.17</h3>
-              <p>Vape crack but laggy asf</p>
-              <a href="https://cold-na-phx-7.gofile.io/download/web/90090c63-91f4-4806-94a4-2470001ff556/vape%20v4.17.dll" class="download-btn">Download Vape v4.17</a>
+              <h3>Aristois</h3>
+              <p>Premium and best client for 1.19.</p>
+              <a href="https://cold2.gofile.io/download/web/02082304-02f7-4da6-a2d6-8e31a3f81927/Aristois%201.19.2.zip" class="download-btn">Download Aristois</a>
             </div>
           </div>
 
           <div id="injectors" class="subtab-content" style="display:none;">
             <div class="module">
-              <h3>Extreme injector v3</h3>
-              <p>We do not promote the use of cheats or software that violate the terms of service of games or platforms.</p>
-              <p>it can inject in almost every game</p>
-              <a href="https://cold-na-phx-4.gofile.io/download/web/a1569f16-fb70-4fdb-a153-08caca8941eb/Extreme%20Injector%20v3.exe" class="download-btn">Download Extreme injector v3</a>
-            </div>
-            <div class="module">
-              <h3>fate injector</h3>
-              <p>Injector for for minecraft bedrock</p>
-              <a href="https://cold-na-phx-6.gofile.io/download/web/ab1040ef-b4ae-4ae5-b11a-2361f5de9bd3/FateInjector.exe" class="download-btn">Download Fate injector</a>
-            </div>
-            <!-- New download button -->
-            <div class="module">
-              <h3>Exloader.net</h3>
-              <p>Exloader but fast and easy access</p>
-              <a href="https://cold8.gofile.io/download/web/d3cb6993-9cda-4431-8162-05a3cd531851/ExLoader_Installer(1).exe" class="download-btn">Download Exloader</a>
+              <h3>Extreme Injector 3</h3>
+              <p>Inject your dll files with ease</p>
+              <a href="https://cold1.gofile.io/download/web/11708d99-fcd5-43df-8d29-2e88370138c6/extreme_injector_3.rar" class="download-btn">Download Injector</a>
             </div>
           </div>
 
           <div id="txtpacks" class="subtab-content" style="display:none;">
             <div class="module">
-              <h3>Storm Fault 16x 1.8.9</h3>
-              <p>Minecraft 1.8.9 bedwars pvp texture pack. And FPS boost</p>
-              <a href="https://cold8.gofile.io/download/web/f9a298c4-798d-4101-8c9a-53e44c4f3908/%C2%A73StormFault%20%C2%A77%5B%C2%A7f16x%C2%A77%5D%20%C2%A78.zip" class="download-btn">Download Storm Fault 16x</a>
-            </div>
-            <div class="module">
-              <h3>Void Clan 6b6t.org</h3>
-              <p>Another text pack for users.</p>
-              <a href="https://store5.gofile.io/download/web/8da44c57-40fa-4f42-9688-ab619a900a3b/Dissolve.zip" class="download-btn">Download Void Clan 6b6t.org</a>
+              <h3>Rust no recoil</h3>
+              <p>txt pack for recoil control.</p>
+              <a href="https://cold4.gofile.io/download/web/1e6f4611-f30b-4f8c-8663-d56662102839/Rust_NoRecoil.zip" class="download-btn">Download txt</a>
             </div>
           </div>
-
         </div>
 
         <div id="tab3" class="tab-content" style="display:none;">
           <h2>Contact Us</h2>
-          <p>Discord: ligmacheats</p>
+          <p>Have questions or want to contribute? Email us at <a href="mailto:support@cheatsite.com">support@cheatsite.com</a></p>
         </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Copyright &copy; 2025 Your Cheat Site</p>
+    </footer>
 
     <script>
-      // Function to switch main tabs
-      function openTab(tabId) {
-        // Hide all tabs
-        const tabs = document.querySelectorAll('.tab-content');
-        tabs.forEach(tab => tab.style.display = 'none');
+      function openTab(tabName) {
+        // Hide all tab contents
+        var tabs = document.querySelectorAll(".tab-content");
+        tabs.forEach(function(tab) {
+          tab.style.display = "none";
+        });
 
         // Show the selected tab
-        document.getElementById(tabId).style.display = 'block';
+        document.getElementById(tabName).style.display = "block";
+      }
 
-        // If cheats tab, open default subtab cs2 or keep previous
-        if (tabId === 'tab2') {
-          openSubTab('cs2');
-          setActiveSubtabButton('btn-cs2');
+      function openSubTab(subTabName) {
+        // Hide all subtab contents
+        var subTabs = document.querySelectorAll(".subtab-content");
+        subTabs.forEach(function(subTab) {
+          subTab.style.display = "none";
+        });
+
+        // Remove active class from all subtab buttons
+        var subTabButtons = document.querySelectorAll(".subtab-buttons button");
+        subTabButtons.forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+        // Show the selected subtab content and activate button
+        document.getElementById(subTabName).style.display = "block";
+        document.getElementById("btn-" + subTabName).classList.add("active");
+      }
+
+      function toggleThread(element) {
+        const thread = element.parentElement;
+        const details = thread.querySelector('.thread-details');
+        const arrow = element.querySelector('.arrow');
+
+        if (details.style.display === 'none' || details.style.display === '') {
+          details.style.display = 'block';
+          arrow.textContent = '▼';
+        } else {
+          details.style.display = 'none';
+          arrow.textContent = '▶';
         }
       }
-
-      // Function to switch subtabs
-      function openSubTab(subtabId) {
-        // Hide all subtabs inside cheats tab
-        const subtabs = document.querySelectorAll('#tab2 .subtab-content');
-        subtabs.forEach(st => st.style.display = 'none');
-
-        // Show the selected subtab
-        document.getElementById(subtabId).style.display = 'block';
-
-        // Update active class on subtab buttons
-        const buttons = document.querySelectorAll('.subtab-buttons button');
-        buttons.forEach(btn => btn.classList.remove('active'));
-
-        // Find the button that opens this subtab and add active
-        const activeBtn = document.querySelector(`.subtab-buttons button[onclick="openSubTab('${subtabId}')"]`);
-        if (activeBtn) activeBtn.classList.add('active');
-      }
-
-      // On page load, show default tab and subtab
-      document.addEventListener('DOMContentLoaded', () => {
-        openTab('tab1');
-      });
     </script>
 
   </body>
