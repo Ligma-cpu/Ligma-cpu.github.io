@@ -1,186 +1,125 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
-    {% seo %}
+  <style>
+    .tab-buttons button {
+      padding: 10px 20px;
+      margin-right: 5px;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
 
-    <style>
-      .tab-buttons button {
-        padding: 10px 20px;
-        margin-right: 5px;
-        background-color: #444;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
+    .tab-buttons button:hover,
+    .tab-buttons button.active {
+      background-color: #00cc88;
+      color: #222;
+    }
 
-      .tab-buttons button:hover {
-        background-color: #666;
-      }
+    .tab-content {
+      border-top: 1px solid #444;
+      padding: 20px;
+      background-color: #222;
+      color: white;
+      margin-bottom: 30px;
+      display: none; /* hide all tabs by default */
+    }
 
-      .tab-content {
-        border-top: 1px solid #444;
-        padding: 20px;
-        background-color: #222;
-        color: white;
-        margin-bottom: 30px;
-      }
+    /* show the active tab */
+    .tab-content.active {
+      display: block;
+    }
 
-      .module {
-        background-color: #333;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-      }
+    .module {
+      background-color: #333;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
 
-      .module h3 {
-        color: #00ffcc;
-        margin-top: 0;
-      }
+    .module h3 {
+      color: #00ffcc;
+      margin-top: 0;
+    }
 
-      .download-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #00cc88;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        margin-top: 10px;
-      }
+    .download-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00cc88;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
 
-      .download-btn:hover {
-        background-color: #00aa77;
-      }
+    .download-btn:hover {
+      background-color: #00aa77;
+    }
+  </style>
+</head>
 
-      /* Forum thread styles */
-      .thread {
-        background-color: #333;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 6px;
-        color: white;
-      }
+<body>
 
-      .thread-title {
-        font-weight: bold;
-        font-size: 1.2em;
-        color: #00cc88;
-        text-decoration: none;
-      }
+  <div class="tab-container">
+    <div class="tab-buttons">
+      <button id="btn-tab1" onclick="openTab('tab1')">Home</button>
+      <button id="btn-tab2" onclick="openTab('tab2')">Cheats</button>
+      <button id="btn-tab3" onclick="openTab('tab3')">Contact</button>
+    </div>
 
-      .thread-title:hover {
-        text-decoration: underline;
-      }
+    <div id="tab1" class="tab-content">
+      <h2>Community Forum</h2>
+      <!-- forum threads here -->
+      <p>Forum content...</p>
+    </div>
 
-      .thread-meta {
-        font-size: 0.85em;
-        color: #aaa;
-        margin-bottom: 8px;
-      }
+    <div id="tab2" class="tab-content">
+      <h2>Cheats Section</h2>
 
-      .thread-preview {
-        font-size: 1em;
-        color: #ddd;
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-        <a id="a-title" href="{{ '/' | relative_url }}">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
-        </a>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-
-        <section id="downloads">
-          {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-          {% endif %}
-          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
+      <div class="module">
+        <h3>Aimbot</h3>
+        <p>Undetected aimbot for Warzone, with bone targeting.</p>
+        <a href="https://example.com/aimbot-download.exe" target="_blank" rel="noopener noreferrer" class="download-btn">Download Aimbot</a>
       </div>
-    </header>
 
-    <!-- ✅ INSERT TABS BELOW HEADER -->
-    <div class="container">
-      <div class="tab-container">
-        <div class="tab-buttons">
-          <button onclick="openTab('tab1')">Home</button>
-          <button onclick="openTab('tab2')">Cheats</button>
-          <button onclick="openTab('tab3')">Contact</button>
-        </div>
-
-        <div id="tab1" class="tab-content" style="display: block;">
-          <h2>Community Forum</h2>
-
-          <div class="thread">
-            <a href="#" class="thread-title">How to install the aimbot?</a>
-            <div class="thread-meta">Started by <strong>User123</strong> — July 1, 2025</div>
-            <p class="thread-preview">I’m having trouble installing the aimbot on Warzone. Any help?</p>
-          </div>
-
-          <div class="thread">
-            <a href="#" class="thread-title">Best settings for wallhack</a>
-            <div class="thread-meta">Started by <strong>ProGamer</strong> — June 30, 2025</div>
-            <p class="thread-preview">Which settings give the best visibility without detection?</p>
-          </div>
-
-          <div class="thread">
-            <a href="#" class="thread-title">New cheats for upcoming update?</a>
-            <div class="thread-meta">Started by <strong>Admin</strong> — June 28, 2025</div>
-            <p class="thread-preview">Will there be new cheats compatible with the next Warzone patch?</p>
-          </div>
-        </div>
-
-        <div id="tab2" class="tab-content" style="display:none;">
-          <h2>Cheats Section</h2>
-
-          <!-- ✅ Add your cheat modules here -->
-          <div class="module">
-            <h3>Aimbot</h3>
-            <p>Undetected aimbot for Warzone, with bone targeting.</p>
-            <a href="https://example.com/aimbot-download.exe" class="download-btn">Download Aimbot</a>
-          </div>
-
-          <div class="module">
-            <h3>Wallhack</h3>
-            <p>ESP for enemies, loot, and teammates. Works in ranked mode.</p>
-            <a href="https://example.com/wallhack-download.exe" class="download-btn">Download Wallhack</a>
-          </div>
-        </div>
-
-        <div id="tab3" class="tab-content" style="display:none;">
-          <h2>Contact Us</h2>
-          <p>Discord: yourserver</p>
-        </div>
+      <div class="module">
+        <h3>Wallhack</h3>
+        <p>ESP for enemies, loot, and teammates. Works in ranked mode.</p>
+        <a href="https://example.com/wallhack-download.exe" target="_blank" rel="noopener noreferrer" class="download-btn">Download Wallhack</a>
       </div>
     </div>
 
-    <!-- 🔽 Main site content below (if needed) -->
-    <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
+    <div id="tab3" class="tab-content">
+      <h2>Contact Us</h2>
+      <p>Discord: yourserver</p>
     </div>
+  </div>
 
-    <!-- ✅ JavaScript for tab functionality -->
-    <script>
-      function openTab(tabId) {
-        document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
-        document.getElementById(tabId).style.display = "block";
-      }
+  <script>
+    function openTab(tabId) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-buttons button').forEach(btn => {
+        btn.classList.remove('active');
+      });
 
-      // Set default tab to Home on page load
-      window.onload = () => openTab('tab1');
-    </script>
+      // Show selected tab content
+      document.getElementById(tabId).classList.add('active');
+      // Highlight selected button
+      document.getElementById('btn-' + tabId).classList.add('active');
+    }
 
-  </body>
+    // Open default tab on page load
+    window.onload = () => openTab('tab1');
+  </script>
+
+</body>
 </html>
