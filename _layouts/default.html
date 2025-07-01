@@ -122,57 +122,10 @@
         background-color: #00cc88;
         color: black;
       }
-
-      /* 🔥 Animated LigmaCheats styles */
-      .animated-box {
-        background-color: #1e1e1e;
-        width: 230px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 10px;
-        font-family: sans-serif;
-        animation: bgCycle 4s infinite;
-        border-radius: 4px;
-        margin: 20px auto;
-      }
-
-      .animated-box .title {
-        color: #00bfff;
-        animation: shake 0.5s infinite;
-      }
-
-      .animated-box .close {
-        color: #fff;
-        cursor: pointer;
-      }
-
-      @keyframes shake {
-        0% { transform: translateX(0); }
-        25% { transform: translateX(-2px); }
-        50% { transform: translateX(2px); }
-        75% { transform: translateX(-2px); }
-        100% { transform: translateX(0); }
-      }
-
-      @keyframes bgCycle {
-        0%   { background-color: #1e1e1e; }
-        25%  { background-color: #320032; }
-        50%  { background-color: #003264; }
-        75%  { background-color: #640000; }
-        100% { background-color: #1e1e1e; }
-      }
     </style>
   </head>
 
   <body>
-
-    <!-- 🔥 LigmaCheats animated banner -->
-    <div class="animated-box" id="animatedBox">
-      <div class="title">LigmaCheats</div>
-      <div class="close" onclick="document.getElementById('animatedBox').style.display='none'">✕</div>
-    </div>
 
     <header>
       <div class="container">
@@ -191,4 +144,53 @@
       </div>
     </header>
 
-    <!-- ✅ The rest of your tabs and content follow as-is -->
+    <!-- ✅ INSERT TABS BELOW HEADER -->
+    <div class="container">
+      <div class="tab-container">
+        <div class="tab-buttons">
+          <button onclick="openTab('tab1')">Home</button>
+          <button onclick="openTab('tab2')">Cheats</button>
+          <button onclick="openTab('tab3')">Contact</button>
+        </div>
+
+        <div id="tab1" class="tab-content" style="display: block;">
+          <h2>Community Forum</h2>
+
+          <div class="thread">
+            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread1')">How to install the aimbot?</a>
+            <div class="thread-meta">Started by <strong>User123</strong> — July 1, 2025</div>
+            <p class="thread-preview">I’m having trouble installing the aimbot on Warzone. Any help?</p>
+            <div id="thread1" class="replies" style="display:none;">
+              <p><strong>Helper01:</strong> Have you tried running the installer as admin?</p>
+              <p><strong>User123:</strong> Yes, but it still crashes.</p>
+            </div>
+          </div>
+
+          <div class="thread">
+            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread2')">Best settings for wallhack</a>
+            <div class="thread-meta">Started by <strong>ProGamer</strong> — June 30, 2025</div>
+            <p class="thread-preview">Which settings give the best visibility without detection?</p>
+            <div id="thread2" class="replies" style="display:none;">
+              <p><strong>ProGamer:</strong> Use medium brightness and turn off shadows.</p>
+              <p><strong>GamerX:</strong> I also recommend lowering contrast a bit.</p>
+            </div>
+          </div>
+
+          <div class="thread">
+            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread3')">New cheats for upcoming update?</a>
+            <div class="thread-meta">Started by <strong>Admin</strong> — June 28, 2025</div>
+            <p class="thread-preview">Will there be new cheats compatible with the next Warzone patch?</p>
+            <div id="thread3" class="replies" style="display:none;">
+              <p><strong>Admin:</strong> Yes, we are working on updates for the new patch.</p>
+              <p><strong>User789:</strong> Looking forward to it!</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab2" class="tab-content" style="display:none;">
+          <h2>Cheats Section</h2>
+
+          <div class="cheats-subtabs">
+            <button id="cs2Btn" onclick="openCheatsSubTab('cs2')">CS2 Cheats</button>
+            <button id="csgoBtn" class="active" onclick="openCheatsSubTab('csgo')">CSGO Cheats</button>
+            <
