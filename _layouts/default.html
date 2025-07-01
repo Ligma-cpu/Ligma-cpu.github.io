@@ -71,6 +71,7 @@
         font-size: 1.2em;
         color: #00cc88;
         text-decoration: none;
+        cursor: pointer;
       }
 
       .thread-title:hover {
@@ -86,6 +87,40 @@
       .thread-preview {
         font-size: 1em;
         color: #ddd;
+      }
+
+      /* Replies styling */
+      .replies {
+        margin-top: 10px;
+        padding-left: 15px;
+        border-left: 2px solid #00cc88;
+        font-size: 0.95em;
+        color: #ccc;
+      }
+
+      .replies p {
+        margin: 5px 0;
+      }
+
+      /* Cheats sub-tabs buttons */
+      .cheats-subtabs {
+        margin-bottom: 15px;
+      }
+      .cheats-subtabs button {
+        padding: 8px 16px;
+        margin-right: 5px;
+        background-color: #555;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .cheats-subtabs button:hover {
+        background-color: #777;
+      }
+      .cheats-subtabs button.active {
+        background-color: #00cc88;
+        color: black;
       }
     </style>
   </head>
@@ -114,8 +149,7 @@
       <div class="tab-container">
         <div class="tab-buttons">
           <button onclick="openTab('tab1')">Home</button>
-          <button onclick="openTab('tab2')">CSGO Cheats</button>
-          <button onclick="openTab('tab4')">Minecraft Cheats</button>
+          <button onclick="openTab('tab2')">Cheats</button>
           <button onclick="openTab('tab3')">Contact</button>
         </div>
 
@@ -123,55 +157,70 @@
           <h2>Community Forum</h2>
 
           <div class="thread">
-            <a href="#" class="thread-title">How to install the aimbot?</a>
+            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread1')">How to install the aimbot?</a>
             <div class="thread-meta">Started by <strong>User123</strong> — July 1, 2025</div>
             <p class="thread-preview">I’m having trouble installing the aimbot on Warzone. Any help?</p>
+            <div id="thread1" class="replies" style="display:none;">
+              <p><strong>Helper01:</strong> Have you tried running the installer as admin?</p>
+              <p><strong>User123:</strong> Yes, but it still crashes.</p>
+            </div>
           </div>
 
           <div class="thread">
-            <a href="#" class="thread-title">Best settings for wallhack</a>
+            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread2')">Best settings for wallhack</a>
             <div class="thread-meta">Started by <strong>ProGamer</strong> — June 30, 2025</div>
             <p class="thread-preview">Which settings give the best visibility without detection?</p>
+            <div id="thread2" class="replies" style="display:none;">
+              <p><strong>ProGamer:</strong> Use medium brightness and turn off shadows.</p>
+              <p><strong>GamerX:</strong> I also recommend lowering contrast a bit.</p>
+            </div>
           </div>
 
           <div class="thread">
-            <a href="#" class="thread-title">New cheats for upcoming update?</a>
+            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread3')">New cheats for upcoming update?</a>
             <div class="thread-meta">Started by <strong>Admin</strong> — June 28, 2025</div>
             <p class="thread-preview">Will there be new cheats compatible with the next Warzone patch?</p>
+            <div id="thread3" class="replies" style="display:none;">
+              <p><strong>Admin:</strong> Yes, we are working on updates for the new patch.</p>
+              <p><strong>User789:</strong> Looking forward to it!</p>
+            </div>
           </div>
         </div>
 
         <div id="tab2" class="tab-content" style="display:none;">
-          <h2>CSGO Cheats Section</h2>
+          <h2>Cheats Section</h2>
 
-          <!-- CSGO cheat modules here -->
-          <div class="module">
-            <h3>Aimbot</h3>
-            <p>Undetected aimbot for CSGO with smooth aiming.</p>
-            <a href="https://example.com/csgo-aimbot.exe" class="download-btn">Download Aimbot</a>
+          <div class="cheats-subtabs">
+            <button id="csgoBtn" class="active" onclick="openCheatsSubTab('csgo')">CSGO Cheats</button>
+            <button id="minecraftBtn" onclick="openCheatsSubTab('minecraft')">Minecraft Cheats</button>
           </div>
 
-          <div class="module">
-            <h3>Wallhack</h3>
-            <p>ESP for enemies and items, works well on competitive servers.</p>
-            <a href="https://example.com/csgo-wallhack.exe" class="download-btn">Download Wallhack</a>
-          </div>
-        </div>
+          <div id="csgo" class="cheats-subtab-content" style="display: block;">
+            <div class="module">
+              <h3>Aimbot for CSGO</h3>
+              <p>Precise undetected aimbot for CSGO with configurable options.</p>
+              <a href="https://example.com/csgo-aimbot.exe" class="download-btn">Download CSGO Aimbot</a>
+            </div>
 
-        <div id="tab4" class="tab-content" style="display:none;">
-          <h2>Minecraft Cheats Section</h2>
-
-          <!-- Minecraft cheat modules here -->
-          <div class="module">
-            <h3>Fly Hack</h3>
-            <p>Enables flying in survival mode with anti-cheat bypass.</p>
-            <a href="https://example.com/minecraft-flyhack.exe" class="download-btn">Download Fly Hack</a>
+            <div class="module">
+              <h3>Wallhack for CSGO</h3>
+              <p>ESP and wallhack for all maps with enemy highlighting.</p>
+              <a href="https://example.com/csgo-wallhack.exe" class="download-btn">Download CSGO Wallhack</a>
+            </div>
           </div>
 
-          <div class="module">
-            <h3>X-Ray Vision</h3>
-            <p>See through blocks to find diamonds and ores easily.</p>
-            <a href="https://example.com/minecraft-xray.exe" class="download-btn">Download X-Ray</a>
+          <div id="minecraft" class="cheats-subtab-content" style="display: none;">
+            <div class="module">
+              <h3>X-Ray for Minecraft</h3>
+              <p>See through blocks to find ores and caves easily.</p>
+              <a href="https://example.com/minecraft-xray.exe" class="download-btn">Download Minecraft X-Ray</a>
+            </div>
+
+            <div class="module">
+              <h3>Speedhack for Minecraft</h3>
+              <p>Increase your walking and flying speed seamlessly.</p>
+              <a href="https://example.com/minecraft-speedhack.exe" class="download-btn">Download Minecraft Speedhack</a>
+            </div>
           </div>
         </div>
 
@@ -189,15 +238,43 @@
       </section>
     </div>
 
-    <!-- ✅ JavaScript for tab functionality -->
+    <!-- ✅ JavaScript for tab and replies functionality -->
     <script>
       function openTab(tabId) {
         document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
         document.getElementById(tabId).style.display = "block";
       }
 
-      // Set default tab to Home on page load
-      window.onload = () => openTab('tab1');
+      function toggleReplies(event, id) {
+        event.preventDefault(); // prevent default link behavior
+        const replies = document.getElementById(id);
+        if (replies.style.display === "none") {
+          replies.style.display = "block";
+        } else {
+          replies.style.display = "none";
+        }
+      }
+
+      // Cheats subtabs function
+      function openCheatsSubTab(tabName) {
+        document.querySelectorAll(".cheats-subtab-content").forEach(el => el.style.display = "none");
+        document.getElementById(tabName).style.display = "block";
+
+        // Toggle active button style
+        document.getElementById('csgoBtn').classList.remove('active');
+        document.getElementById('minecraftBtn').classList.remove('active');
+        if(tabName === 'csgo') {
+          document.getElementById('csgoBtn').classList.add('active');
+        } else if(tabName === 'minecraft') {
+          document.getElementById('minecraftBtn').classList.add('active');
+        }
+      }
+
+      // Set default tabs on page load
+      window.onload = () => {
+        openTab('tab1');
+        openCheatsSubTab('csgo');
+      };
     </script>
 
   </body>
