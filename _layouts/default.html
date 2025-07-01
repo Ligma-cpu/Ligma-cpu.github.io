@@ -87,25 +87,6 @@
         font-size: 1em;
         color: #ddd;
       }
-
-      /* Subtabs inside Cheats */
-      .subtab-buttons button {
-        padding: 8px 16px;
-        margin-right: 5px;
-        background-color: #555;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 4px;
-      }
-      .subtab-buttons button:hover,
-      .subtab-buttons button.active {
-        background-color: #00cc88;
-        color: #222;
-      }
-      .subtab-content {
-        margin-top: 15px;
-      }
     </style>
   </head>
 
@@ -162,41 +143,17 @@
         <div id="tab2" class="tab-content" style="display:none;">
           <h2>Cheats Section</h2>
 
-          <!-- Sub-tabs for cheats -->
-          <div class="subtab-buttons" style="margin-bottom: 15px;">
-            <button id="btn-aimbot" onclick="openSubTab('aimbot')">Aimbot</button>
-            <button id="btn-wallhack" onclick="openSubTab('wallhack')">Wallhack</button>
-            <button id="btn-other" onclick="openSubTab('other')">Other Cheats</button>
+          <!-- ✅ Add your cheat modules here -->
+          <div class="module">
+            <h3>Aimbot</h3>
+            <p>Undetected aimbot for Warzone, with bone targeting.</p>
+            <a href="https://example.com/aimbot-download.exe" class="download-btn">Download Aimbot</a>
           </div>
 
-          <!-- Subtab contents -->
-          <div id="aimbot" class="subtab-content">
-            <div class="module">
-              <h3>Aimbot</h3>
-              <p>Undetected aimbot for Warzone, with bone targeting.</p>
-              <a href="https://example.com/aimbot-download.exe" target="_blank" rel="noopener noreferrer" class="download-btn">Download Aimbot</a>
-            </div>
-          </div>
-
-          <div id="wallhack" class="subtab-content" style="display:none;">
-            <div class="module">
-              <h3>Wallhack</h3>
-              <p>ESP for enemies, loot, and teammates. Works in ranked mode.</p>
-              <a href="https://example.com/wallhack-download.exe" target="_blank" rel="noopener noreferrer" class="download-btn">Download Wallhack</a>
-            </div>
-          </div>
-
-          <div id="other" class="subtab-content" style="display:none;">
-            <div class="module">
-              <h3>Radar Hack</h3>
-              <p>Shows enemy positions on your minimap.</p>
-              <a href="https://example.com/radar-download.exe" target="_blank" rel="noopener noreferrer" class="download-btn">Download Radar Hack</a>
-            </div>
-            <div class="module">
-              <h3>No Recoil</h3>
-              <p>Removes weapon recoil for better accuracy.</p>
-              <a href="https://example.com/norecoil-download.exe" target="_blank" rel="noopener noreferrer" class="download-btn">Download No Recoil</a>
-            </div>
+          <div class="module">
+            <h3>Wallhack</h3>
+            <p>ESP for enemies, loot, and teammates. Works in ranked mode.</p>
+            <a href="https://example.com/wallhack-download.exe" class="download-btn">Download Wallhack</a>
           </div>
         </div>
 
@@ -221,22 +178,8 @@
         document.getElementById(tabId).style.display = "block";
       }
 
-      function openSubTab(subTabId) {
-        // Hide all subtabs
-        document.querySelectorAll('.subtab-content').forEach(el => el.style.display = 'none');
-        // Remove active from all subtab buttons
-        document.querySelectorAll('.subtab-buttons button').forEach(btn => btn.classList.remove('active'));
-        // Show selected subtab
-        document.getElementById(subTabId).style.display = 'block';
-        // Mark button active
-        document.getElementById('btn-' + subTabId).classList.add('active');
-      }
-
-      // Set default tab to Home and default cheats subtab on page load
-      window.onload = () => {
-        openTab('tab1');  // Default main tab
-        openSubTab('aimbot'); // Default cheats subtab
-      };
+      // Set default tab to Home on page load
+      window.onload = () => openTab('tab1');
     </script>
 
   </body>
