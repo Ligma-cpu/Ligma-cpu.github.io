@@ -94,3 +94,8 @@
   }
 }
 
+.subtab-buttons button.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #00ffcc; // match Cheats section title color
+}
