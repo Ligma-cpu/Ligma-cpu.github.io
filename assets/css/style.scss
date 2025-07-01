@@ -94,15 +94,30 @@
   }
 }
 
-.subtab-buttons button.active {
-  font-weight: bold;
-  text-decoration: underline;
-  background-color: #00ffcc;  // same as section title color
-  color: #222;                // make text readable on bright background
+.subtab-buttons {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #00ffcc;  /* same as the title color */
+  border-radius: 5px;
+  padding: 5px;
 }
 
-.subtab-buttons button:hover:not(.active) {
-  background-color: #004d40; // a darker teal for hover effect
-  color: white;
+.subtab-buttons button {
+  background-color: transparent;
+  color: #222;  /* text color dark for contrast */
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin-right: 8px;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.subtab-buttons button.active,
+.subtab-buttons button:hover {
+  background-color: #222;
+  color: #00ffcc;
+}
+
 
