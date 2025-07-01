@@ -2,3 +2,64 @@
 ---
 
 @import 'jekyll-theme-hacker';
+
+// --- Custom Tab Styles ---
+
+.tab-buttons {
+  margin-bottom: 10px;
+
+  button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #666;
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  border-top: 1px solid #444;
+  padding: 20px;
+  background-color: #222;
+  color: white;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+// Show the Home tab by default
+#tab1.tab-content {
+  display: block;
+}
+
+.module {
+  background-color: #333;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+
+  h3 {
+    color: #00ffcc;
+    margin-top: 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00cc88;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+
+    &:hover {
+      background-color: #00aa77;
+    }
+  }
+}
