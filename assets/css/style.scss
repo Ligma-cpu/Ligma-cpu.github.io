@@ -94,30 +94,106 @@
   }
 }
 
-.subtab-buttons {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  background-color: #00ffcc;  /* same as the title color */
-  border-radius: 5px;
-  padding: 5px;
+---
+---
+
+@import 'jekyll-theme-hacker';
+
+// --- Custom Tab Styles ---
+
+.tab-buttons {
+  margin-bottom: 10px;
+
+  button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #666;
+    }
+  }
 }
 
-.subtab-buttons button {
-  background-color: transparent;
-  color: #222;  /* text color dark for contrast */
-  border: none;
-  cursor: pointer;
-  padding: 8px 16px;
-  margin-right: 8px;
-  font-weight: bold;
-  border-radius: 3px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.subtab-buttons button.active,
-.subtab-buttons button:hover {
+.tab-content {
+  display: none;
+  border-top: 1px solid #444;
+  padding: 20px;
   background-color: #222;
-  color: #00ffcc;
+  color: white;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+// Show the Home tab by default
+#tab1.tab-content {
+  display: block;
+}
+
+.module {
+  background-color: #333;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+
+  h3 {
+    color: #00ffcc;
+    margin-top: 0;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00cc88;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+
+    &:hover {
+      background-color: #00aa77;
+    }
+  }
+}
+
+.thread {
+  background-color: #333;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  color: white;
+
+  .thread-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #00cc88;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .thread-meta {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+
+  .thread-preview {
+    font-size: 1em;
+    color: #ddd;
+  }
+}
+
+.subtab-buttons button.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #00ffcc; // match Cheats section title color
 }
 
 
