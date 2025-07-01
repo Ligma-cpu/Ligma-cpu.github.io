@@ -87,6 +87,26 @@
         font-size: 1em;
         color: #ddd;
       }
+
+      /* Subtab button styles - minimal, no background or color overrides */
+      .subtab-buttons button {
+        padding: 8px 16px;
+        margin-right: 5px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: transparent;
+        color: inherit;
+        font-weight: normal;
+        transition: all 0.2s ease;
+      }
+      .subtab-buttons button:hover {
+        text-decoration: underline;
+      }
+      .subtab-buttons button.active {
+        font-weight: bold;
+        text-decoration: underline;
+      }
     </style>
   </head>
 
@@ -140,20 +160,49 @@
           </div>
         </div>
 
+        <!-- Cheats tab with subtabs -->
         <div id="tab2" class="tab-content" style="display:none;">
           <h2>Cheats Section</h2>
 
-          <!-- ✅ Add your cheat modules here -->
-          <div class="module">
-            <h3>Aimbot</h3>
-            <p>Undetected aimbot for Warzone, with bone targeting.</p>
-            <a href="https://example.com/aimbot-download.exe" class="download-btn">Download Aimbot</a>
+          <!-- Subtab buttons -->
+          <div class="subtab-buttons" style="margin-bottom: 15px;">
+            <button id="btn-cs2" onclick="openSubTab('cs2')" class="active">CS2 Cheats</button>
+            <button id="btn-csgo" onclick="openSubTab('csgo')">CSGO Cheats</button>
+            <button id="btn-minecraft" onclick="openSubTab('minecraft')">Minecraft Clients</button>
+            <button id="btn-injectors" onclick="openSubTab('injectors')">Injectors and Loaders</button>
           </div>
 
-          <div class="module">
-            <h3>Wallhack</h3>
-            <p>ESP for enemies, loot, and teammates. Works in ranked mode.</p>
-            <a href="https://example.com/wallhack-download.exe" class="download-btn">Download Wallhack</a>
+          <!-- Subtab contents -->
+          <div id="cs2" class="subtab-content">
+            <div class="module">
+              <h3>CS2 Cheats</h3>
+              <p>Latest cheats for Counter-Strike 2, featuring advanced aim assistance and wallhacks.</p>
+              <a href="https://example.com/cs2-cheat-download.exe" class="download-btn">Download CS2 Cheats</a>
+            </div>
+          </div>
+
+          <div id="csgo" class="subtab-content" style="display:none;">
+            <div class="module">
+              <h3>CSGO Cheats</h3>
+              <p>Undetected cheats for CS:GO including aimbot, triggerbot, and radar hacks.</p>
+              <a href="https://example.com/csgo-cheat-download.exe" class="download-btn">Download CSGO Cheats</a>
+            </div>
+          </div>
+
+          <div id="minecraft" class="subtab-content" style="display:none;">
+            <div class="module">
+              <h3>Minecraft Clients</h3>
+              <p>Custom Minecraft clients with built-in hacks and utilities.</p>
+              <a href="https://example.com/minecraft-client-download.exe" class="download-btn">Download Minecraft Clients</a>
+            </div>
+          </div>
+
+          <div id="injectors" class="subtab-content" style="display:none;">
+            <div class="module">
+              <h3>Injectors and Loaders</h3>
+              <p>Safe and reliable injectors and loaders for various cheats.</p>
+              <a href="https://example.com/injector-download.exe" class="download-btn">Download Injectors</a>
+            </div>
           </div>
         </div>
 
@@ -171,15 +220,25 @@
       </section>
     </div>
 
-    <!-- ✅ JavaScript for tab functionality -->
+    <!-- ✅ JavaScript for tab and subtab functionality -->
     <script>
       function openTab(tabId) {
         document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
         document.getElementById(tabId).style.display = "block";
       }
 
-      // Set default tab to Home on page load
-      window.onload = () => openTab('tab1');
+      function openSubTab(subTabId) {
+        document.querySelectorAll('.subtab-content').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.subtab-buttons button').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(subTabId).style.display = 'block';
+        document.getElementById('btn-' + subTabId).classList.add('active');
+      }
+
+      // Set default tabs on page load
+      window.onload = () => {
+        openTab('tab1');       // default main tab: Home
+        openSubTab('cs2');     // default subtab in Cheats tab: CS2 Cheats
+      };
     </script>
 
   </body>
