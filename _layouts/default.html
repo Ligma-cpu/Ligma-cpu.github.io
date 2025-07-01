@@ -71,7 +71,6 @@
         font-size: 1.2em;
         color: #00cc88;
         text-decoration: none;
-        cursor: pointer;
       }
 
       .thread-title:hover {
@@ -87,40 +86,6 @@
       .thread-preview {
         font-size: 1em;
         color: #ddd;
-      }
-
-      /* Replies styling */
-      .replies {
-        margin-top: 10px;
-        padding-left: 15px;
-        border-left: 2px solid #00cc88;
-        font-size: 0.95em;
-        color: #ccc;
-      }
-
-      .replies p {
-        margin: 5px 0;
-      }
-
-      /* Cheats sub-tabs buttons */
-      .cheats-subtabs {
-        margin-bottom: 15px;
-      }
-      .cheats-subtabs button {
-        padding: 8px 16px;
-        margin-right: 5px;
-        background-color: #555;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 4px;
-      }
-      .cheats-subtabs button:hover {
-        background-color: #777;
-      }
-      .cheats-subtabs button.active {
-        background-color: #00cc88;
-        color: black;
       }
     </style>
   </head>
@@ -157,40 +122,65 @@
           <h2>Community Forum</h2>
 
           <div class="thread">
-            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread1')">How to install the aimbot?</a>
+            <a href="#" class="thread-title">How to install the aimbot?</a>
             <div class="thread-meta">Started by <strong>User123</strong> — July 1, 2025</div>
             <p class="thread-preview">I’m having trouble installing the aimbot on Warzone. Any help?</p>
-            <div id="thread1" class="replies" style="display:none;">
-              <p><strong>Helper01:</strong> Have you tried running the installer as admin?</p>
-              <p><strong>User123:</strong> Yes, but it still crashes.</p>
-            </div>
           </div>
 
           <div class="thread">
-            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread2')">Best settings for wallhack</a>
+            <a href="#" class="thread-title">Best settings for wallhack</a>
             <div class="thread-meta">Started by <strong>ProGamer</strong> — June 30, 2025</div>
             <p class="thread-preview">Which settings give the best visibility without detection?</p>
-            <div id="thread2" class="replies" style="display:none;">
-              <p><strong>ProGamer:</strong> Use medium brightness and turn off shadows.</p>
-              <p><strong>GamerX:</strong> I also recommend lowering contrast a bit.</p>
-            </div>
           </div>
 
           <div class="thread">
-            <a href="#" class="thread-title" onclick="toggleReplies(event, 'thread3')">New cheats for upcoming update?</a>
+            <a href="#" class="thread-title">New cheats for upcoming update?</a>
             <div class="thread-meta">Started by <strong>Admin</strong> — June 28, 2025</div>
             <p class="thread-preview">Will there be new cheats compatible with the next Warzone patch?</p>
-            <div id="thread3" class="replies" style="display:none;">
-              <p><strong>Admin:</strong> Yes, we are working on updates for the new patch.</p>
-              <p><strong>User789:</strong> Looking forward to it!</p>
-            </div>
           </div>
         </div>
 
         <div id="tab2" class="tab-content" style="display:none;">
           <h2>Cheats Section</h2>
 
-          <div class="cheats-subtabs">
-            <button id="cs2Btn" onclick="openCheatsSubTab('cs2')">CS2 Cheats</button>
-            <button id="csgoBtn" class="active" onclick="openCheatsSubTab('csgo')">CSGO Cheats</button>
-            <
+          <!-- ✅ Add your cheat modules here -->
+          <div class="module">
+            <h3>Aimbot</h3>
+            <p>Undetected aimbot for Warzone, with bone targeting.</p>
+            <a href="https://example.com/aimbot-download.exe" class="download-btn">Download Aimbot</a>
+          </div>
+
+          <div class="module">
+            <h3>Wallhack</h3>
+            <p>ESP for enemies, loot, and teammates. Works in ranked mode.</p>
+            <a href="https://example.com/wallhack-download.exe" class="download-btn">Download Wallhack</a>
+          </div>
+        </div>
+
+        <div id="tab3" class="tab-content" style="display:none;">
+          <h2>Contact Us</h2>
+          <p>Discord: yourserver</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔽 Main site content below (if needed) -->
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+    </div>
+
+    <!-- ✅ JavaScript for tab functionality -->
+    <script>
+      function openTab(tabId) {
+        document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
+        document.getElementById(tabId).style.display = "block";
+      }
+
+      // Set default tab to Home on page load
+      window.onload = () => openTab('tab1');
+    </script>
+
+  </body>
+</html>
